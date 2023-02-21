@@ -427,7 +427,7 @@
                         }
                     }); 
             }
-          function send_data(url,datas) {
+            function send_data(url,datas) {
             
             console.log(datas,url)
             var data = new FormData();
@@ -449,11 +449,10 @@
                     else{
                         console.log('error')
                     }
+                    window.location.reload()
                 }
             })
           }
-
-
   </script>
   <!-- container-scroller -->
   <!-- plugins:js -->

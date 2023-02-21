@@ -411,30 +411,31 @@
                 })
               }
               function send_data(url,datas) {
-                
-                console.log(datas,url)
-                var data = new FormData();
-                data.append("csrfmiddlewaretoken", $("input[name=csrfmiddlewaretoken]").val());
-                for(let i=0;i<datas.length;i++){
-                  data.append(datas[i],$(datas[i]).val())
-                }
-                $.ajax({
-                    method: "POST",
-                    url: url,
-                    processData: false,
-                    contentType: false,
-                    mimeType: "multipart/form-data",
-                    data: data,
-                    success: function(data) {
-                        if (data.status == "Upload Done") {
-                            console.log("Uploading Done successfully")
-                        }
-                        else{
-                            console.log('error')
-                        }
+            
+            console.log(datas,url)
+            var data = new FormData();
+            data.append("csrfmiddlewaretoken", $("input[name=csrfmiddlewaretoken]").val());
+            for(let i=0;i<datas.length;i++){
+              data.append(datas[i],$(datas[i]).val())
+            }
+            $.ajax({
+                method: "POST",
+                url: url,
+                processData: false,
+                contentType: false,
+                mimeType: "multipart/form-data",
+                data: data,
+                success: function(data) {
+                    if (data.status == "Upload Done") {
+                        console.log("Uploading Done successfully")
                     }
-                })
-              }
+                    else{
+                        console.log('error')
+                    }
+                    window.location.reload()
+                }
+            })
+          }
         function del3(id) {
             $.ajax({
                 method: "get",
