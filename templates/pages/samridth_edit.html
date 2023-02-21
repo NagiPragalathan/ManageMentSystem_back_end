@@ -424,9 +424,7 @@
                         }
                     }); 
             }
-          function send_data(url,datas) {
-            
-            console.log(datas,url)
+            function send_data(url,datas) {
             var data = new FormData();
             data.append("csrfmiddlewaretoken", $("input[name=csrfmiddlewaretoken]").val());
             for(let i=0;i<datas.length;i++){
@@ -446,10 +444,10 @@
                     else{
                         console.log('error')
                     }
+                    window.location.reload()
                 }
             })
           }
-
 
 
   </script>
