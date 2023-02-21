@@ -20,13 +20,14 @@ from Crescent import settings
 from django.conf.urls.static import static
 
 
+
 urlpatterns = [
     
-    path('admin_home/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('', views.home),
     path('image_upload_page_gallery',views.image_upload_page_gallery),
 
-    path('admin',views.admin_home),
+    path('admin_home_',views.admin_home),
     path('admin_home_auth',views.admin_home_auth),
     path('logout_admin',views.logout_admin),
     path('FourNotFout',views.FourNotFout),
@@ -64,6 +65,7 @@ urlpatterns = [
     path('delete_form',views.delete_form),
 
 
+    path('download_pdf',views.download_pdf),      # Download home pdf
     path('convert_excel',views.convert_excel),
     path('carrer_convert_excel',views.carrer_convert_excel), # >>>>>>>>>>>>>>>>>>>>>>>> Download Files >>>>>>>>>>>>>>>>>>>>
     
@@ -80,6 +82,7 @@ urlpatterns = [
     path('testimonicals',views.Testimonicals),
     path('testimonicals_edit',views.Testimonicals_edit),
     path('testimonicals_save',views.Testimonicals_save),
+    path('delete_Testimonicals',views.delete_Testimonicals),
 
     path('events',views.events),
     path('events_save',views.events_save),
@@ -143,6 +146,7 @@ urlpatterns = [
 
     path("home_edit",views.home_edit),
     path("whoweare_save",views.Whoweare),
+    path("HomePdfLink_save",views.HomePdfLink_save),
     path("Home_TESTIMONIAL",views.Home_TESTIMONIAL),
     path("Contact_Section",views.Contact_Section),
     path("investors",views.investors),
@@ -222,10 +226,41 @@ urlpatterns = [
     path('footer_edit',views.footer_edit),
     path('FooterEditPage_save',views.FooterEditPage_save),
     path('SocialMediaLinks_save',views.SocialMediaLinks_save),
+    
+    path('category',views.category),
+    path('CategoryforGallery_save',views.CategoryforGallery_save),
+    path('delete_CategoryforGallery',views.delete_CategoryforGallery),
 
+    path('delete_CategoryforGallery',views.delete_CategoryforGallery),
+
+
+    path('CategoryforTeams',views.CategoryforTeams),
+    path('CategoryforTeams_save',views.CategoryforTeams_save),
+    path('delete_CategoryforTeams',views.delete_CategoryforTeams),
+    
+    path('CategoryforEvents_save',views.CategoryforEvents_save),
+    path('delete_CategoryforEvents',views.delete_CategoryforEvents),
+
+    path('CategoryforQualification_save',views.CategoryforQualification_save),
+    path('delete_CategoryforQualification',views.delete_CategoryforQualification),
+
+    path('CategoryforExperience_save',views.CategoryforExperience_save),
+    path('delete_CategoryforExperience',views.delete_CategoryforExperience),
+
+    path('CategoryforBlogs_save',views.CategoryforBlogs_save),
+    path('delete_CategoryforBlogs',views.delete_CategoryforBlogs),
+
+    path('CategoryforStartups_save',views.CategoryforStartups_save),
 
 
 ]
+
+
+
+
+
+
+
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)

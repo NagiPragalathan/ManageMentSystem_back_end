@@ -168,6 +168,13 @@ class new_venturesDB(models.Model):
     def __str__(self):
         return self.Content 
 
+
+class HomePdfLink(models.Model):
+    id              = models.IntegerField(primary_key=True)
+    link   = models.CharField(max_length = 2000)
+    updated_date    = models.DateField(default=timezone.now)
+
+
 class WhoAreWe(models.Model):
     id              = models.IntegerField(primary_key=True)
     SubHeading   = models.CharField(max_length = 2000)
@@ -510,4 +517,39 @@ class SocialMediaLinks(models.Model):
     Facebook = models.CharField(max_length = 200)
     Instagram = models.CharField(max_length = 200)
     LinkedIn = models.CharField(max_length = 200)
+    last_updated_date = models.DateField(default=timezone.now)
+
+class CategoryforGallery(models.Model):
+    id = models.IntegerField(primary_key=True)
+    cat_val = models.CharField(max_length = 200)
+    last_updated_date = models.DateField(default=timezone.now)
+
+
+class CategoryforTeams(models.Model):
+    id = models.IntegerField(primary_key=True)
+    cat_val = models.CharField(max_length = 200)
+    last_updated_date = models.DateField(default=timezone.now)
+
+class CategoryforEvents(models.Model):
+    id = models.IntegerField(primary_key=True)
+    cat_val = models.CharField(max_length = 200)
+    last_updated_date = models.DateField(default=timezone.now)
+
+class CategoryforQualification(models.Model):
+    id = models.IntegerField(primary_key=True)
+    cat_val = models.CharField(max_length = 200)
+    last_updated_date = models.DateField(default=timezone.now)
+class CategoryforExperience(models.Model):
+    id = models.IntegerField(primary_key=True)
+    cat_val = models.CharField(max_length = 200)
+    last_updated_date = models.DateField(default=timezone.now)
+
+class CategoryforBlogs(models.Model):
+    id = models.IntegerField(primary_key=True)
+    cat_val = models.CharField(max_length = 200)
+    last_updated_date = models.DateField(default=timezone.now)
+
+class CategoryforStartups(models.Model):
+    id = models.IntegerField(primary_key=True)
+    cat_val = models.CharField(max_length = 200)
     last_updated_date = models.DateField(default=timezone.now)

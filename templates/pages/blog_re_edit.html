@@ -233,9 +233,14 @@
                                           <input type="text" value="{{ obj.blog_profile_img }}" class="border-2 border-gray-300 p-2 w-full" name="Thumbnail" id="Thumbnail" placeholder="(Optional)">
                                       </div>
 
-                                      <div class="mb-4">
-                                          <label class="text-xl text-gray-600">Category</label></br>
-                                          <input type="text" value="{{ obj.categories }}" class="border-2 border-gray-300 p-2 w-full" name="Category" id="Category" placeholder="(Optional)">
+                                      <div class="form-group">
+                                        <label for="cars">categories</label>
+                                                <select class="form-control" name="Category" id="Category">
+                                                  {% for i in CategoryforBlogs %}
+                                                  <option value="{{ i.cat_val }}">{{ i.cat_val }}</option>
+                                                  {% endfor %}
+                                          
+                                                </select>
                                       </div>
 
                                       <div class="mb-8">

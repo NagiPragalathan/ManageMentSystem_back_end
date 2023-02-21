@@ -263,6 +263,8 @@
                             <div class="space-y-0.5 font-medium dark:text-white text-left">
                                 <div>{{ i.Name }}</div>
                                 <div class="text-sm font-light text-gray-500 dark:text-gray-400">{{ i.position }}</div>
+                                  <button onclick="del('delete_Testimonicals','{{ i.T_id }}')" style="display: flex; flex-wrap: nowrap; flex-direction: row; align-content: center; justify-content: center; align-items: center;"><iconify-icon icon="ic:baseline-delete-forever" style="color: red;" width="20" height="20"></iconify-icon>
+                                  <h6>Delete</h6></button>
                             </div>
                         </figcaption> 
                     </figure>
@@ -303,6 +305,20 @@
                     }
                 })
               }
+              function del(url,id) {
+                    $.ajax({
+                        method: "POST",
+                        url: url,
+                        data: {
+                            'id': id,
+                            'csrfmiddlewaretoken': $("input[name=csrfmiddlewaretoken]").val()
+                        }, success: function (data) {
+                            location.reload();
+                        }
+                    });
+                    location.reload();
+
+            }
 
 
   </script>

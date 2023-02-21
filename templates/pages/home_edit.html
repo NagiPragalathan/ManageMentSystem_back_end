@@ -561,6 +561,28 @@
                    </div>
                  </div>
                </div>
+
+
+
+               <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                  
+                    <!-- <h4 class=" my-1" >Upload Image</h4> -->
+                    <!-- <p class="card-description">
+                     Upload image to  the home slider
+                    </p> -->
+                    <form class="forms-sample" enctype="multipart/form-data" method="post">
+                      {% csrf_token %}
+                      <div class="form-group mt-2">
+                        <label for="exampleInputEmail1">Home's Pdf Link</label>
+                        <input type="text" class="form-control" placeholder="" id="link" value="{{ link.0.link }}" name="Appear-on-to-of-image"><br>
+                        <button id="btn" onclick="send_data('HomePdfLink_save',['#link'])" class="btn btn-primary mr-2">Submit</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
            
                <!-- <section class="overflow-hidden text-gray-700 ">
                    {% for i in team %}

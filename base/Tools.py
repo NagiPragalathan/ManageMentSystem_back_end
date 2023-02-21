@@ -1,4 +1,6 @@
-from .models import Gallery,Team,logo,blog,OurStartup,DemoDayPic,fishieries,FooterEditPage,SocialMediaLinks
+from .models import (Gallery,Team,logo,blog,OurStartup,DemoDayPic,fishieries,FooterEditPage,SocialMediaLinks,
+                    CategoryforGallery, CategoryforTeams, CategoryforEvents, CategoryforQualification, CategoryforExperience,
+                     CategoryforBlogs, CategoryforStartups)
 import random
 def get_vals(request,data):
     datas = []
@@ -48,6 +50,12 @@ def reguler_datas(data=False):
             out = {'logo':last_logo,'logo_collection':logo_[::-1]}
     except:
         print("Erorr are occers in Tools -> reguler_datas function {may be the db is empty we can't load the icons so you can see this message}")
+    new = {'CategoryforGallery':CategoryforGallery.objects.all()[::-1],'CategoryforTeams':CategoryforTeams.objects.all()[::-1],
+            'CategoryforEvents':CategoryforEvents.objects.all()[::-1],'CategoryforQualification':CategoryforQualification.objects.all()[::-1],
+            'CategoryforExperience':CategoryforExperience.objects.all()[::-1],'CategoryforBlogs':CategoryforBlogs.objects.all()[::-1],
+            'CategoryforStartups':CategoryforStartups.objects.all()[::-1]
+    }
+    out = dict(out,**new)
     return dict(out,**{'FooterEditPage':FooterEditPage.objects.all()[::-1],'SocialMediaLinks':SocialMediaLinks.objects.all()[::-1]})
 
 def freguler_datas(data=False):
